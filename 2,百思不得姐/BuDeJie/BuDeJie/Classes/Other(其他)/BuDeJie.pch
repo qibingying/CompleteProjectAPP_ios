@@ -1,0 +1,42 @@
+//
+//  BuDeJie.pch
+//  BuDeJie
+//
+//  Created by 古俊奇 on 2017/7/7.
+//  Copyright © 2017年 骑兵营. All rights reserved.
+//以后可以专门定义一个存放宏的文件
+
+#ifdef __OBJC__ // 只有oc文件才导入
+//⬇️这里导入头文件
+
+#import "UIView+Frame.h"
+#import "UIBarButtonItem+Create.h"
+#import "UIImage+Extension.h"
+#import "QBYConst.h"
+
+
+#define QBYColor(r,g,b) [UIColor colorWithRed:(r) / 256.0 green:(g) / 256.0 blue:(b) / 256.0 alpha:1]
+#define QBYRandomColor QBYColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
+
+/***********屏幕适配*************/
+#define QBYScreenW [UIScreen mainScreen].bounds.size.width
+#define QBYScreenH [UIScreen mainScreen].bounds.size.height
+#define iphone6P (QBYScreenH == 736)            //414*736
+#define iphone6 (QBYScreenH == 667)             //375*667
+#define iphone5 (QBYScreenH == 568)             //320*568
+#define iphone4 (QBYScreenH == 480)             //320*480
+/***********屏幕适配*************/
+
+#define QBYFunc QBYLog(@"%s",__func__)
+//添加定义，在release时不会输出log
+#ifndef __OPTIMIZE__
+//#define NSLog(fmt, ...) NSLog((@"[文件名:%s]\n" "[函数名:%s]\n" "[行号:%d] \n" fmt"\n\n"), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__)
+//#define NSLog(fmt, ...) NSLog((@"[函数名:%s]\n" "[行号:%d] \n" fmt"\n\n"), __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define QBYLog(format, ...) printf("\n[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+
+#else
+#define NSLog(...) {}
+#endif
+
+#endif
+
