@@ -247,7 +247,7 @@ static CGFloat const margin = 1;
     // 跳转到设置界面
     QBYSettingViewController *settingVc = [[QBYSettingViewController alloc] init];
     // 必须要在跳转之前设置
-    settingVc.hidesBottomBarWhenPushed = YES;
+//    settingVc.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:settingVc animated:YES];
     

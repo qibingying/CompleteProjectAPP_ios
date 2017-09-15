@@ -80,8 +80,6 @@ static NSString * const ID = @"cell";
         [SVProgressHUD dismiss];
     }];
 
-
-
 }
 
 - (void)didReceiveMemoryWarning {

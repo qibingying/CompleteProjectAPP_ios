@@ -26,6 +26,8 @@ static NSString * const ID = @"cell";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"jump" style:0 target:self action:@selector(jump)];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
+    // 提示用户当前正在加载数据 SVPro
+    [SVProgressHUD showWithStatus:@"正在加载ing....."];
     // 获取文件夹尺寸
     // 文件夹非常小,如果我的文件非常大
     [QBYFileTool getFileSize:CachePath completion:^(NSInteger totalSize) {

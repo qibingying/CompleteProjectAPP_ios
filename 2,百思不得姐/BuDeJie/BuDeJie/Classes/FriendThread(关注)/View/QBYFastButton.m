@@ -14,7 +14,7 @@
 {
     [super layoutSubviews];
     
-    // 设置图片位置
+    // 设置图片位置 imageView的高度父类已经算出来了
     self.imageView.qby_y = 0;
     self.imageView.qby_centerX = self.qby_width * 0.5;
     

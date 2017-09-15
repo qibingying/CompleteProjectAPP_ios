@@ -74,6 +74,7 @@
 #pragma mark - 加载广告数据
 - (void)loadAdData
 {
+//    服务端相应头写错了
     // unacceptable content-type: text/html"  响应头
     
     // 1.创建请求会话管理者
@@ -94,7 +95,7 @@
         // 字典转模型
         _item = [QBYADItem mj_objectWithKeyValues:adDict];
         
-        // 创建UIImageView展示图片 =>
+        // 创建UIImageView展示图片 => 这个是固定屏幕的宽度  算显示的高度
         CGFloat h = QBYScreenW / _item.w * _item.h;
         
         self.adView.frame = CGRectMake(0, 0, QBYScreenW, h);

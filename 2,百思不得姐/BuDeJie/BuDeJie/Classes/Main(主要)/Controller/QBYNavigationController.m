@@ -19,7 +19,6 @@
 + (void)load{
     
     UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedIn:self, nil];
-    
     // 只要是通过模型设置,都是通过富文本设置
     // 设置导航条标题 => UINavigationBar
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
@@ -39,7 +38,7 @@
 }
 
 #pragma  mark - UIGestureRecognizerDelegate
-
+//什么时候返回事件可用
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
 
     return self.childViewControllers.count > 1;

@@ -69,6 +69,7 @@
     }
     
     // 调整发布按钮位置
+//    self.plusButton.frame = CGRectMake((QBYScreenW - btnW) / 2, -30, btnW, btnH);
     self.plusButton.center = CGPointMake(self.qby_width * 0.5, self.qby_height * 0.5);
 
 }

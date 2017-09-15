@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *middleView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadCons;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (assign, nonatomic)CGFloat qby_x;
 
 @end
 
@@ -61,10 +62,21 @@
     sender.selected = !sender.selected;
     
     // 平移中间view
-    _leadCons.constant = _leadCons.constant == 0? -self.middleView.qby_width * 0.5:0;
+//    _leadCons.constant = _leadCons.constant == 0? -self.middleView.qby_width * 0.5:0;
     
+     _qby_x = self.middleView.qby_x == 0 ? - self.middleView.qby_width * 0.5 : 0;
     [UIView animateWithDuration:0.3 animations:^{
-        [self.view layoutIfNeeded];
+//        [self.view layoutIfNeeded];
+        CGRect frames = self.middleView.frame;
+        
+        frames.origin.x = _qby_x;
+        
+        self.middleView.frame = frames;
+        
+
+//        self.middleView.qby_x = self.middleView.qby_x;
+//        [self.view layoutIfNeeded];
+
     }];
 }
 
@@ -73,6 +85,12 @@
 {
     // 一定要调用super
     [super viewDidLayoutSubviews];
+    
+    CGRect frames = self.middleView.frame;
+    
+    frames.origin.x = _qby_x;
+    
+    self.middleView.frame = frames;
     
     // 设置登录view
     QBYLoginRegisterView *loginView = self.middleView.subviews[0];

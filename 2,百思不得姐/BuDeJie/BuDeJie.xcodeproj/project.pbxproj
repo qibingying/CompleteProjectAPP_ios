@@ -31,6 +31,10 @@
 		5858872D1F176DDF00321ADA /* QBYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5858872B1F176DDF00321ADA /* QBYWebViewController.m */; };
 		5858872E1F176DDF00321ADA /* QBYWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5858872C1F176DDF00321ADA /* QBYWebViewController.xib */; };
 		585887301F17726200321ADA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5858872F1F17726200321ADA /* WebKit.framework */; };
+		585F55FD1F68DC9500E195DE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 585F55FC1F68DC9500E195DE /* SVProgressHUD.bundle */; };
+		5870B8B61F69114C00F9FE51 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870B8B11F69114C00F9FE51 /* NSArray+Log.m */; };
+		5870B8B71F69114C00F9FE51 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870B8B31F69114C00F9FE51 /* NSDictionary+Log.m */; };
+		5870B8B81F69114C00F9FE51 /* NSString+unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870B8B51F69114C00F9FE51 /* NSString+unicode.m */; };
 		589614791F17131C00725EE3 /* QBYLoginField.m in Sources */ = {isa = PBXBuildFile; fileRef = 589614781F17131C00725EE3 /* QBYLoginField.m */; };
 		5896147C1F1717BC00725EE3 /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5896147B1F1717BC00725EE3 /* UITextField+Placeholder.m */; };
 		589EB9E01F0B3DAC00B14F9B /* BuDeJieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 589EB9DF1F0B3DAC00B14F9B /* BuDeJieTests.m */; };
@@ -121,6 +125,13 @@
 		5858872B1F176DDF00321ADA /* QBYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYWebViewController.m; sourceTree = "<group>"; };
 		5858872C1F176DDF00321ADA /* QBYWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBYWebViewController.xib; sourceTree = "<group>"; };
 		5858872F1F17726200321ADA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		585F55FC1F68DC9500E195DE /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		5870B8B01F69114C00F9FE51 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		5870B8B11F69114C00F9FE51 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		5870B8B21F69114C00F9FE51 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
+		5870B8B31F69114C00F9FE51 /* NSDictionary+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
+		5870B8B41F69114C00F9FE51 /* NSString+unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+unicode.h"; sourceTree = "<group>"; };
+		5870B8B51F69114C00F9FE51 /* NSString+unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+unicode.m"; sourceTree = "<group>"; };
 		589614771F17131C00725EE3 /* QBYLoginField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYLoginField.h; sourceTree = "<group>"; };
 		589614781F17131C00725EE3 /* QBYLoginField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYLoginField.m; sourceTree = "<group>"; };
 		5896147A1F1717BC00725EE3 /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
@@ -214,6 +225,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5870B8AF1F69114C00F9FE51 /* QBYLog */ = {
+			isa = PBXGroup;
+			children = (
+				5870B8B01F69114C00F9FE51 /* NSArray+Log.h */,
+				5870B8B11F69114C00F9FE51 /* NSArray+Log.m */,
+				5870B8B21F69114C00F9FE51 /* NSDictionary+Log.h */,
+				5870B8B31F69114C00F9FE51 /* NSDictionary+Log.m */,
+				5870B8B41F69114C00F9FE51 /* NSString+unicode.h */,
+				5870B8B51F69114C00F9FE51 /* NSString+unicode.m */,
+			);
+			path = QBYLog;
+			sourceTree = "<group>";
+		};
 		589EB9B91F0B3DAC00B14F9B = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				58BCDA9A1F12594800F69152 /* Classes */,
+				5870B8AF1F69114C00F9FE51 /* QBYLog */,
 				58A4999D1F126C6F00D6031F /* Assets.xcassets */,
 				589EB9D61F0B3DAC00B14F9B /* Info.plist */,
 				589EB9C51F0B3DAC00B14F9B /* Supporting Files */,
@@ -250,6 +275,7 @@
 		589EB9C51F0B3DAC00B14F9B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				585F55FC1F68DC9500E195DE /* SVProgressHUD.bundle */,
 				58A4999F1F126C9700D6031F /* Image */,
 			);
 			name = "Supporting Files";
@@ -797,6 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5858872E1F176DDF00321ADA /* QBYWebViewController.xib in Resources */,
+				585F55FD1F68DC9500E195DE /* SVProgressHUD.bundle in Resources */,
 				58A499AD1F126CB500D6031F /* LaunchImage.png in Resources */,
 				58E3DBE41F21EE54006450F5 /* QBYSubTagCell.xib in Resources */,
 				5833D9B61F14B43000779061 /* QBYFastLoginView.xib in Resources */,
@@ -897,8 +924,10 @@
 				5833D9971F14635800779061 /* QBYLoginRegisterViewController.m in Sources */,
 				58A499B91F136EDD00D6031F /* QBYSubTagItem.m in Sources */,
 				585887281F1763C700321ADA /* QBYSquareCell.m in Sources */,
+				5870B8B81F69114C00F9FE51 /* NSString+unicode.m in Sources */,
 				589614791F17131C00725EE3 /* QBYLoginField.m in Sources */,
 				5858872D1F176DDF00321ADA /* QBYWebViewController.m in Sources */,
+				5870B8B61F69114C00F9FE51 /* NSArray+Log.m in Sources */,
 				144F84E71F35C2B50000A1C4 /* QBYPictureViewController.m in Sources */,
 				144F84DE1F35C1810000A1C4 /* QBYAllViewController.m in Sources */,
 				141840D21F37539E003BB74F /* QBYConst.m in Sources */,
@@ -911,6 +940,7 @@
 				58BCDADF1F12594800F69152 /* QBYPublishViewController.m in Sources */,
 				58BCDAD81F12594800F69152 /* QBYMeViewController.m in Sources */,
 				144F84E11F35C20F0000A1C4 /* QBYVideoViewController.m in Sources */,
+				5870B8B71F69114C00F9FE51 /* NSDictionary+Log.m in Sources */,
 				58E3DBE31F21EE54006450F5 /* QBYSubTagCell.m in Sources */,
 				58BCDAD41F12594800F69152 /* QBYFriendThreadViewController.m in Sources */,
 				58BCDAD51F12594800F69152 /* QBYNavigationController.m in Sources */,
@@ -1047,7 +1077,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BuDeJie/Classes/Other(其他)/BuDeJie.pch";
 				INFOPLIST_FILE = BuDeJie/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qibingying.BuDeJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1064,7 +1094,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BuDeJie/Classes/Other(其他)/BuDeJie.pch";
 				INFOPLIST_FILE = BuDeJie/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qibingying.BuDeJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
