@@ -277,6 +277,7 @@
     CGFloat ofsetY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.qby_height;
     
 //    g并且tableView的偏移量大于上边缘的内边距，也可以简单的理解为上拉的时候要刷新
+//    估计作者想标的意思不能同时进行下拉刷新
     if (self.tableView.contentOffset.y >= ofsetY && self.tableView.contentOffset.y > - (self.tableView.contentInset.top)) {
         // footer完全出现，并且是往上拖拽
         [self footerBeginRefreshing];
