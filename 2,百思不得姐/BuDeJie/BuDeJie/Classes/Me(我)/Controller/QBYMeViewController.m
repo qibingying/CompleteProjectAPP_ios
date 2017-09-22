@@ -42,7 +42,7 @@ static CGFloat const margin = 1;
     
     // 处理cell间距,默认tableView分组样式,有额外头部和尾部间距
     self.tableView.sectionHeaderHeight = 0;
-    self.tableView.sectionFooterHeight = 10;
+    self.tableView.sectionFooterHeight = QBYMarin;
     self.tableView.showsVerticalScrollIndicator = NO;
     
     self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
@@ -85,7 +85,7 @@ static CGFloat const margin = 1;
     parameters[@"c"] = @"topic";
     
     // 3.发送请求
-    [mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
+    [mgr GET:QBYCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
         
         [responseObject writeToFile:@"/Users/gujunqi/Desktop/gujunqi.plist" atomically:YES];
         NSArray *dictArr = responseObject[@"square_list"];

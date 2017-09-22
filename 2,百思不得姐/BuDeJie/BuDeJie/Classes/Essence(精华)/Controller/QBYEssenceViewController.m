@@ -125,7 +125,7 @@
     //    titlesView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
     // 子控件会继承父控件设置的alpha透明度
     //    titlesView.alpha = 0.5;
-    titleViews.frame = CGRectMake(0, 64, self.view.qby_width, 35);
+    titleViews.frame = CGRectMake(0, QBYNavMaxY, self.view.qby_width, QBYTitlesViewH);
     [self.view addSubview:titleViews];
     self.titlesView = titleViews;
     
@@ -186,7 +186,7 @@
     self.previousClickedTitleButton = firstTitleButton;
     
     [firstTitleButton.titleLabel sizeToFit]; // 让label根据文字内容计算尺寸
-    self.titleUnderline.qby_width = firstTitleButton.titleLabel.qby_width + 10;
+    self.titleUnderline.qby_width = firstTitleButton.titleLabel.qby_width + QBYMarin;
     self.titleUnderline.qby_centerX = firstTitleButton.qby_centerX;
 }
 
@@ -214,7 +214,15 @@
     if (self.previousClickedTitleButton == titleButton) {
         [[NSNotificationCenter defaultCenter] postNotificationName:QBYTitleButtonDidRepeatClickNotification object:nil];
     }
+    // 处理标题按钮点击
+    [self dealTitleButtonClick:titleButton];
+}
 
+/**
+ *  处理标题按钮点击
+ */
+- (void)dealTitleButtonClick:(QBYTitleButton *)titleButton
+{
     self.previousClickedTitleButton.selected = NO;
     titleButton.selected = YES;
     self.previousClickedTitleButton = titleButton;
@@ -229,7 +237,7 @@
         //        attributes[NSFontAttributeName] = titleButton.titleLabel.font;
         //        self.titleUnderline.xmg_width = [titleButton.currentTitle sizeWithAttributes:attributes].width;
         
-        self.titleUnderline.qby_width = titleButton.titleLabel.qby_width + 10;
+        self.titleUnderline.qby_width = titleButton.titleLabel.qby_width + QBYMarin;
         self.titleUnderline.qby_centerX = titleButton.qby_centerX;
         
         // 滚动scrollView
@@ -305,7 +313,8 @@
     QBYTitleButton *titleButton = self.titlesView.subviews[index];
 //    用tag一定要注意  因为他会遍历自己的tag  当tag=0的时候更要注意
     //    XMGTitleButton *titleButton = [self.titlesView viewWithTag:index];
-    [self titleButtonClick:titleButton];
+//    [self titleButtonClick:titleButton];
+     [self dealTitleButtonClick:titleButton];
 }
 
 #pragma mark - 其他

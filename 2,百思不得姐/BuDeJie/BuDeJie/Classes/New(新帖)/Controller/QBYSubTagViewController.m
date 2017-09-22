@@ -25,7 +25,7 @@ static NSString * const ID = @"cell";
 @end
 
 @implementation QBYSubTagViewController
-
+// 接口文档: 请求url(基本url+请求参数) 请求方式
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -67,7 +67,7 @@ static NSString * const ID = @"cell";
     parameters[@"c"] = @"topic";
 
     // 3.发送请求
-    [mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable responseObject) {
+    [mgr GET:QBYCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable responseObject) {
         
         [SVProgressHUD dismiss];
         // 字典数组转换模型数组
