@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class QBYTopic;
 
 @interface QBYTopicVoiceView : UIView
-
+/** 模型数据 */
+@property (nonatomic, strong) QBYTopic *topic;
 @end

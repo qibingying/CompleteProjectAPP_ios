@@ -9,7 +9,10 @@
 #import "QBYTopic.h"
 
 @implementation QBYTopic
-
+/*
+ 如果错误信息里面包含了：NaN，一般都是因为除0造成（比如x/0）
+ (NaN : Not a number）
+ */
 - (CGFloat)cellHeight
 {
     // 如果已经计算过，就直接返回

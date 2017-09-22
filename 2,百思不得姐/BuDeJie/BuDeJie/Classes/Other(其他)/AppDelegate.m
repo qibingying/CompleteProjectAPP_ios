@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "QBYTabBarController.h"
 #import "QBYADViewController.h"
+#import <AFNetworking.h>
 
 /*
  优先级:LaunchScreen > LaunchImage
@@ -67,6 +68,9 @@
     self.window.rootViewController = adVc;
 //    3,显示主窗口
     [self.window makeKeyAndVisible];
+    
+    // 4.开始监控网络状况
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     return YES;
 }
 

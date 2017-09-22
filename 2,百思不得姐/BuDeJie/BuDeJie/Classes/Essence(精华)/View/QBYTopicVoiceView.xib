@@ -7,13 +7,61 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="SqB-Oz-tv7" customClass="QBYTopicVoiceView">
-            <rect key="frame" x="0.0" y="0.0" width="244" height="119"/>
+        <view contentMode="scaleToFill" id="Zvk-bf-sYF" customClass="QBYTopicVoiceView">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="222"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bEE-H7-Uhm">
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="222"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mr-vo-Sts">
+                    <rect key="frame" x="140" y="79" width="63" height="63"/>
+                    <state key="normal" image="playButtonPlay" backgroundImage="playButton">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="playButtonClick"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4343播放" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFC-QK-KZH">
+                    <rect key="frame" x="275" y="0.0" width="68" height="18"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMf-G0-Ecs">
+                    <rect key="frame" x="302" y="204" width="41" height="18"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bEE-H7-Uhm" secondAttribute="bottom" id="Kx4-kl-Nwf"/>
+                <constraint firstItem="bEE-H7-Uhm" firstAttribute="leading" secondItem="Zvk-bf-sYF" secondAttribute="leading" id="MGx-MH-sGg"/>
+                <constraint firstItem="bEE-H7-Uhm" firstAttribute="top" secondItem="Zvk-bf-sYF" secondAttribute="top" id="P9Y-tZ-dye"/>
+                <constraint firstAttribute="trailing" secondItem="HMf-G0-Ecs" secondAttribute="trailing" id="cYa-28-871"/>
+                <constraint firstAttribute="centerX" secondItem="0mr-vo-Sts" secondAttribute="centerX" id="dgv-lE-bJj"/>
+                <constraint firstAttribute="trailing" secondItem="bEE-H7-Uhm" secondAttribute="trailing" id="fqv-ir-jm6"/>
+                <constraint firstAttribute="centerY" secondItem="0mr-vo-Sts" secondAttribute="centerY" id="opz-S4-VUS"/>
+                <constraint firstItem="SFC-QK-KZH" firstAttribute="top" secondItem="Zvk-bf-sYF" secondAttribute="top" id="sDR-Da-O6N"/>
+                <constraint firstAttribute="bottom" secondItem="HMf-G0-Ecs" secondAttribute="bottom" id="sn6-U3-1oi"/>
+                <constraint firstAttribute="trailing" secondItem="SFC-QK-KZH" secondAttribute="trailing" id="yqz-3f-OWJ"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="142" y="311.5"/>
+            <connections>
+                <outlet property="imageView" destination="bEE-H7-Uhm" id="p6r-Cz-wRa"/>
+                <outlet property="playcountLabel" destination="SFC-QK-KZH" id="LKj-Qn-cJd"/>
+                <outlet property="voicetimeLabel" destination="HMf-G0-Ecs" id="MTA-7g-R7R"/>
+            </connections>
+            <point key="canvasLocation" x="218.5" y="237"/>
         </view>
     </objects>
+    <resources>
+        <image name="playButton" width="63" height="63"/>
+        <image name="playButtonClick" width="63" height="63"/>
+        <image name="playButtonPlay" width="30" height="30"/>
+    </resources>
 </document>

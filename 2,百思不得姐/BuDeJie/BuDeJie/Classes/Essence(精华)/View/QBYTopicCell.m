@@ -160,6 +160,7 @@
     } else if (topic.type == QBYTopicTypeVoice) { // 声音
         self.pictureView.hidden = YES;
         self.voiceView.hidden = NO;
+        self.voiceView.topic = topic;
         self.videoView.hidden = YES;
     } else if (topic.type == QBYTopicTypeVideo) { // 视频
         self.pictureView.hidden = YES;
