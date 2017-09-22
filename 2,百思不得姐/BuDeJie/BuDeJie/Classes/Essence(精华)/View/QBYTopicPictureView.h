@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface QBYTopicPictureView : UIView
+@class QBYTopic;
 
+@interface QBYTopicPictureView : UIView
+/** 模型数据 */
+@property (nonatomic, strong) QBYTopic *topic;
 @end

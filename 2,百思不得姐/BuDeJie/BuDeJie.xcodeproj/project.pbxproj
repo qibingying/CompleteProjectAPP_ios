@@ -18,6 +18,7 @@
 		14482B381F74F9F4001E0DEF /* QBYTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14482B371F74F9F4001E0DEF /* QBYTopicPictureView.xib */; };
 		14482B3A1F74FAC5001E0DEF /* QBYTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14482B391F74FAC5001E0DEF /* QBYTopicVideoView.xib */; };
 		14482B3C1F74FB6D001E0DEF /* QBYTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14482B3B1F74FB6D001E0DEF /* QBYTopicVoiceView.xib */; };
+		14482B3F1F7510EE001E0DEF /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B3E1F7510EE001E0DEF /* UIImageView+Download.m */; };
 		144F84DB1F35A4E80000A1C4 /* QBYTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F84DA1F35A4E80000A1C4 /* QBYTitleButton.m */; };
 		144F84DE1F35C1810000A1C4 /* QBYAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F84DD1F35C1810000A1C4 /* QBYAllViewController.m */; };
 		144F84E11F35C20F0000A1C4 /* QBYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F84E01F35C20F0000A1C4 /* QBYVideoViewController.m */; };
@@ -116,6 +117,8 @@
 		14482B371F74F9F4001E0DEF /* QBYTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBYTopicPictureView.xib; sourceTree = "<group>"; };
 		14482B391F74FAC5001E0DEF /* QBYTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBYTopicVideoView.xib; sourceTree = "<group>"; };
 		14482B3B1F74FB6D001E0DEF /* QBYTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBYTopicVoiceView.xib; sourceTree = "<group>"; };
+		14482B3D1F7510EE001E0DEF /* UIImageView+Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
+		14482B3E1F7510EE001E0DEF /* UIImageView+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
 		144F84D91F35A4E80000A1C4 /* QBYTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYTitleButton.h; sourceTree = "<group>"; };
 		144F84DA1F35A4E80000A1C4 /* QBYTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYTitleButton.m; sourceTree = "<group>"; };
 		144F84DC1F35C1810000A1C4 /* QBYAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYAllViewController.h; sourceTree = "<group>"; };
@@ -623,6 +626,8 @@
 				58BCDAC71F12594800F69152 /* UIView+Frame.m */,
 				5896147A1F1717BC00725EE3 /* UITextField+Placeholder.h */,
 				5896147B1F1717BC00725EE3 /* UITextField+Placeholder.m */,
+				14482B3D1F7510EE001E0DEF /* UIImageView+Download.h */,
+				14482B3E1F7510EE001E0DEF /* UIImageView+Download.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -975,6 +980,7 @@
 				585887281F1763C700321ADA /* QBYSquareCell.m in Sources */,
 				5870B8B81F69114C00F9FE51 /* NSString+unicode.m in Sources */,
 				589614791F17131C00725EE3 /* QBYLoginField.m in Sources */,
+				14482B3F1F7510EE001E0DEF /* UIImageView+Download.m in Sources */,
 				5858872D1F176DDF00321ADA /* QBYWebViewController.m in Sources */,
 				5870B8B61F69114C00F9FE51 /* NSArray+Log.m in Sources */,
 				144F84E71F35C2B50000A1C4 /* QBYPictureViewController.m in Sources */,

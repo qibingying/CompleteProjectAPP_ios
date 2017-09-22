@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *playcountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *voicetimeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *placeholderView;
 @end
 
 @implementation QBYTopicVoiceView
@@ -28,6 +29,15 @@
 {
     _topic = topic;
     
+    // 设置图片
+//    [self.imageView qby_setOriginImage:topic.image1 thumbnailImage:topic.image0 placeholder:nil];
+    self.placeholderView.hidden = NO;
+    [self.imageView qby_setOriginImage:topic.image1 thumbnailImage:topic.image0 placeholder:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (!image) return;
+        
+        self.placeholderView.hidden = YES;
+    }];
+   /**
     // 占位图片
     UIImage *placeholder = nil;
     // 根据网络状态来加载图片
@@ -58,7 +68,7 @@
             }
         }
     }
-    
+    */
     // 播放数量
     if (topic.playcount >= 10000) {
         self.playcountLabel.text = [NSString stringWithFormat:@"%.1f万播放", topic.playcount / 10000.0];

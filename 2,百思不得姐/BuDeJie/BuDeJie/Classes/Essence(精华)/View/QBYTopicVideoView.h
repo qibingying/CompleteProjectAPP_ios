@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class QBYTopic;
 
 @interface QBYTopicVideoView : UIView
+/** 模型数据 */
+@property (nonatomic, strong) QBYTopic *topic;
 
 @end

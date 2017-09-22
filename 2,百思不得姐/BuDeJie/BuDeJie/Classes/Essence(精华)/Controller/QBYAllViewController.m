@@ -43,6 +43,8 @@
 @property (nonatomic, weak) UILabel *footerLabel;
 /** 上拉刷新控件时候正在刷新 */
 @property (nonatomic, assign, getter=isFooterRefreshing) BOOL footerRefreshing;
+// 有了方法声明，点语法才会有智能提示
+- (QBYTopicType)type;
 
 @end
 
@@ -176,6 +178,11 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
 }
 
 #pragma mark - 数据处理
+- (QBYTopicType)type
+{
+    return QBYTopicTypePicture;
+}
+
 /*
  服务器数据：45，44，43，42，41，40，39，38，37，36，35，34，。。。。。。5，4，3，2，1
  
@@ -211,7 +218,9 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @"31"; // 这里发送@1也是可行的
+//    parameters[@"type"] = @"31"; // 这里发送@1也是可行的
+    parameters[@"type"] = @(self.type);
+
 //    parameters[@"mintime"] = @"5345345";
     //    parameters[@"mintime"] = @"1440496442";
     
@@ -257,7 +266,8 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @"31";
+//    parameters[@"type"] = @"31";
+    parameters[@"type"] = @(self.type);
     parameters[@"maxtime"] = self.maxtime;
     
     //    parameters[@"last_id"] = @"35";

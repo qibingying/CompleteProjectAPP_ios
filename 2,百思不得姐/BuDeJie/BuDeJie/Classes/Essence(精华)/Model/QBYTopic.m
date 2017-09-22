@@ -39,6 +39,10 @@
         
         CGFloat middleW = textMaxSize.width;
         CGFloat middleH = middleW * self.height / self.width;
+        if (middleH >= QBYScreenH) { // 显示的图片高度超过一个屏幕，就是超长图片
+            middleH = 200;
+            self.bigPicture = YES;
+        }
         CGFloat middleY = _cellHeight;
         CGFloat middleX = QBYMarin;
         self.middleFrame = CGRectMake(middleX, middleY, middleW, middleH);

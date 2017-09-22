@@ -11,6 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="343" height="222"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="CVS-Gm-JOT" userLabel="占位图片">
+                    <rect key="frame" x="0.0" y="30" width="343" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="r9I-uu-lgf"/>
+                    </constraints>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bEE-H7-Uhm">
                     <rect key="frame" x="0.0" y="0.0" width="343" height="222"/>
                 </imageView>
@@ -38,9 +44,13 @@
             </subviews>
             <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="CVS-Gm-JOT" firstAttribute="top" secondItem="Zvk-bf-sYF" secondAttribute="top" constant="30" id="29C-Ad-JZR"/>
+                <constraint firstAttribute="trailing" secondItem="CVS-Gm-JOT" secondAttribute="trailing" id="5AJ-1z-LMv"/>
+                <constraint firstItem="SFC-QK-KZH" firstAttribute="leading" secondItem="CVS-Gm-JOT" secondAttribute="trailing" id="7xi-n4-Xp2"/>
                 <constraint firstAttribute="bottom" secondItem="bEE-H7-Uhm" secondAttribute="bottom" id="Kx4-kl-Nwf"/>
                 <constraint firstItem="bEE-H7-Uhm" firstAttribute="leading" secondItem="Zvk-bf-sYF" secondAttribute="leading" id="MGx-MH-sGg"/>
                 <constraint firstItem="bEE-H7-Uhm" firstAttribute="top" secondItem="Zvk-bf-sYF" secondAttribute="top" id="P9Y-tZ-dye"/>
+                <constraint firstItem="CVS-Gm-JOT" firstAttribute="leading" secondItem="Zvk-bf-sYF" secondAttribute="leading" id="SXH-43-aom"/>
                 <constraint firstAttribute="trailing" secondItem="HMf-G0-Ecs" secondAttribute="trailing" id="cYa-28-871"/>
                 <constraint firstAttribute="centerX" secondItem="0mr-vo-Sts" secondAttribute="centerX" id="dgv-lE-bJj"/>
                 <constraint firstAttribute="trailing" secondItem="bEE-H7-Uhm" secondAttribute="trailing" id="fqv-ir-jm6"/>
@@ -51,8 +61,14 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="7xi-n4-Xp2"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="imageView" destination="bEE-H7-Uhm" id="p6r-Cz-wRa"/>
+                <outlet property="placeholderView" destination="CVS-Gm-JOT" id="aDD-cR-fvZ"/>
                 <outlet property="playcountLabel" destination="SFC-QK-KZH" id="LKj-Qn-cJd"/>
                 <outlet property="voicetimeLabel" destination="HMf-G0-Ecs" id="MTA-7g-R7R"/>
             </connections>
@@ -60,6 +76,7 @@
         </view>
     </objects>
     <resources>
+        <image name="imageBackground" width="75" height="15"/>
         <image name="playButton" width="63" height="63"/>
         <image name="playButtonClick" width="63" height="63"/>
         <image name="playButtonPlay" width="30" height="30"/>
