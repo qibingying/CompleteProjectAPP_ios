@@ -1,13 +1,13 @@
 //
-//  QBYVideoCell.h
+//  QBYVoiceCell.h
 //  BuDeJie
 //
 //  Created by 瑰丽奇兵 on 2017/9/21.
 //  Copyright © 2017年 骑兵营. All rights reserved.
 //
 
-#import "QBYTopicCell.h"
+#import <UIKit/UIKit.h>
 
-@interface QBYVideoCell : QBYTopicCell
+@interface QBYTopicVoiceView : UIView
 
 @end

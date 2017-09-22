@@ -10,6 +10,11 @@
 
 @implementation UIView (Frame)
 
++ (instancetype)qby_viewFromXib
+{
+    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
+}
+
 - (void)setQby_height:(CGFloat)qby_height
 {
     CGRect rect = self.frame;

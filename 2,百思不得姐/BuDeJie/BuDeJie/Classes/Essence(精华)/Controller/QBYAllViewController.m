@@ -83,7 +83,7 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // 设置cell的估算高度（每一行大约都是estimatedRowHeight）
-    self.tableView.estimatedRowHeight = 100;
+//    self.tableView.estimatedRowHeight = 100;
 //    self.tableView.rowHeight = 200;
     
     // 注册cell

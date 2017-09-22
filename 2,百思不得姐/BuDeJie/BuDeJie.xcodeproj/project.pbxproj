@@ -10,11 +10,14 @@
 		141840D21F37539E003BB74F /* QBYConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 141840D11F37539E003BB74F /* QBYConst.m */; };
 		14482B221F739E6E001E0DEF /* QBYTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B211F739E6E001E0DEF /* QBYTopic.m */; };
 		14482B281F73F5AD001E0DEF /* QBYTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B271F73F5AD001E0DEF /* QBYTopicCell.m */; };
-		14482B2B1F73F6D3001E0DEF /* QBYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B2A1F73F6D3001E0DEF /* QBYVideoCell.m */; };
-		14482B2E1F73F71A001E0DEF /* QBYVoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B2D1F73F71A001E0DEF /* QBYVoiceCell.m */; };
-		14482B311F73F778001E0DEF /* QBYPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B301F73F778001E0DEF /* QBYPictureCell.m */; };
+		14482B2B1F73F6D3001E0DEF /* QBYTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B2A1F73F6D3001E0DEF /* QBYTopicVideoView.m */; };
+		14482B2E1F73F71A001E0DEF /* QBYTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B2D1F73F71A001E0DEF /* QBYTopicVoiceView.m */; };
+		14482B311F73F778001E0DEF /* QBYTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B301F73F778001E0DEF /* QBYTopicPictureView.m */; };
 		14482B341F73F7A8001E0DEF /* QBYWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B331F73F7A8001E0DEF /* QBYWordCell.m */; };
 		14482B361F740397001E0DEF /* QBYTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14482B351F740397001E0DEF /* QBYTopicCell.xib */; };
+		14482B381F74F9F4001E0DEF /* QBYTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14482B371F74F9F4001E0DEF /* QBYTopicPictureView.xib */; };
+		14482B3A1F74FAC5001E0DEF /* QBYTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14482B391F74FAC5001E0DEF /* QBYTopicVideoView.xib */; };
+		14482B3C1F74FB6D001E0DEF /* QBYTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14482B3B1F74FB6D001E0DEF /* QBYTopicVoiceView.xib */; };
 		144F84DB1F35A4E80000A1C4 /* QBYTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F84DA1F35A4E80000A1C4 /* QBYTitleButton.m */; };
 		144F84DE1F35C1810000A1C4 /* QBYAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F84DD1F35C1810000A1C4 /* QBYAllViewController.m */; };
 		144F84E11F35C20F0000A1C4 /* QBYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F84E01F35C20F0000A1C4 /* QBYVideoViewController.m */; };
@@ -101,15 +104,18 @@
 		14482B211F739E6E001E0DEF /* QBYTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYTopic.m; sourceTree = "<group>"; };
 		14482B261F73F5AD001E0DEF /* QBYTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYTopicCell.h; sourceTree = "<group>"; };
 		14482B271F73F5AD001E0DEF /* QBYTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYTopicCell.m; sourceTree = "<group>"; };
-		14482B291F73F6D3001E0DEF /* QBYVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYVideoCell.h; sourceTree = "<group>"; };
-		14482B2A1F73F6D3001E0DEF /* QBYVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYVideoCell.m; sourceTree = "<group>"; };
-		14482B2C1F73F71A001E0DEF /* QBYVoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYVoiceCell.h; sourceTree = "<group>"; };
-		14482B2D1F73F71A001E0DEF /* QBYVoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYVoiceCell.m; sourceTree = "<group>"; };
-		14482B2F1F73F778001E0DEF /* QBYPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYPictureCell.h; sourceTree = "<group>"; };
-		14482B301F73F778001E0DEF /* QBYPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYPictureCell.m; sourceTree = "<group>"; };
+		14482B291F73F6D3001E0DEF /* QBYTopicVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYTopicVideoView.h; sourceTree = "<group>"; };
+		14482B2A1F73F6D3001E0DEF /* QBYTopicVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYTopicVideoView.m; sourceTree = "<group>"; };
+		14482B2C1F73F71A001E0DEF /* QBYTopicVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYTopicVoiceView.h; sourceTree = "<group>"; };
+		14482B2D1F73F71A001E0DEF /* QBYTopicVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYTopicVoiceView.m; sourceTree = "<group>"; };
+		14482B2F1F73F778001E0DEF /* QBYTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYTopicPictureView.h; sourceTree = "<group>"; };
+		14482B301F73F778001E0DEF /* QBYTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYTopicPictureView.m; sourceTree = "<group>"; };
 		14482B321F73F7A8001E0DEF /* QBYWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYWordCell.h; sourceTree = "<group>"; };
 		14482B331F73F7A8001E0DEF /* QBYWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYWordCell.m; sourceTree = "<group>"; };
 		14482B351F740397001E0DEF /* QBYTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBYTopicCell.xib; sourceTree = "<group>"; };
+		14482B371F74F9F4001E0DEF /* QBYTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBYTopicPictureView.xib; sourceTree = "<group>"; };
+		14482B391F74FAC5001E0DEF /* QBYTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBYTopicVideoView.xib; sourceTree = "<group>"; };
+		14482B3B1F74FB6D001E0DEF /* QBYTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBYTopicVoiceView.xib; sourceTree = "<group>"; };
 		144F84D91F35A4E80000A1C4 /* QBYTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYTitleButton.h; sourceTree = "<group>"; };
 		144F84DA1F35A4E80000A1C4 /* QBYTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYTitleButton.m; sourceTree = "<group>"; };
 		144F84DC1F35C1810000A1C4 /* QBYAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYAllViewController.h; sourceTree = "<group>"; };
@@ -421,12 +427,15 @@
 				14482B261F73F5AD001E0DEF /* QBYTopicCell.h */,
 				14482B271F73F5AD001E0DEF /* QBYTopicCell.m */,
 				14482B351F740397001E0DEF /* QBYTopicCell.xib */,
-				14482B291F73F6D3001E0DEF /* QBYVideoCell.h */,
-				14482B2A1F73F6D3001E0DEF /* QBYVideoCell.m */,
-				14482B2C1F73F71A001E0DEF /* QBYVoiceCell.h */,
-				14482B2D1F73F71A001E0DEF /* QBYVoiceCell.m */,
-				14482B2F1F73F778001E0DEF /* QBYPictureCell.h */,
-				14482B301F73F778001E0DEF /* QBYPictureCell.m */,
+				14482B291F73F6D3001E0DEF /* QBYTopicVideoView.h */,
+				14482B2A1F73F6D3001E0DEF /* QBYTopicVideoView.m */,
+				14482B391F74FAC5001E0DEF /* QBYTopicVideoView.xib */,
+				14482B2C1F73F71A001E0DEF /* QBYTopicVoiceView.h */,
+				14482B2D1F73F71A001E0DEF /* QBYTopicVoiceView.m */,
+				14482B3B1F74FB6D001E0DEF /* QBYTopicVoiceView.xib */,
+				14482B2F1F73F778001E0DEF /* QBYTopicPictureView.h */,
+				14482B301F73F778001E0DEF /* QBYTopicPictureView.m */,
+				14482B371F74F9F4001E0DEF /* QBYTopicPictureView.xib */,
 				14482B321F73F7A8001E0DEF /* QBYWordCell.h */,
 				14482B331F73F7A8001E0DEF /* QBYWordCell.m */,
 			);
@@ -858,6 +867,7 @@
 			files = (
 				5858872E1F176DDF00321ADA /* QBYWebViewController.xib in Resources */,
 				585F55FD1F68DC9500E195DE /* SVProgressHUD.bundle in Resources */,
+				14482B381F74F9F4001E0DEF /* QBYTopicPictureView.xib in Resources */,
 				58A499AD1F126CB500D6031F /* LaunchImage.png in Resources */,
 				58E3DBE41F21EE54006450F5 /* QBYSubTagCell.xib in Resources */,
 				5833D9B61F14B43000779061 /* QBYFastLoginView.xib in Resources */,
@@ -865,7 +875,9 @@
 				58A4999E1F126C6F00D6031F /* Assets.xcassets in Resources */,
 				585887211F175F8B00321ADA /* QBYMeViewController.storyboard in Resources */,
 				14621F1B1F66B1CE00FA6A9A /* QBYADViewController.xib in Resources */,
+				14482B3A1F74FAC5001E0DEF /* QBYTopicVideoView.xib in Resources */,
 				58A499AB1F126CB500D6031F /* LaunchImage-800-667h@2x.png in Resources */,
+				14482B3C1F74FB6D001E0DEF /* QBYTopicVoiceView.xib in Resources */,
 				5833D9981F14635800779061 /* QBYLoginRegisterViewController.xib in Resources */,
 				58A499A81F126CB500D6031F /* LaunchImage-568h@2x.png in Resources */,
 				58A499AA1F126CB500D6031F /* LaunchImage-700@2x.png in Resources */,
@@ -951,14 +963,14 @@
 				5833D99D1F14AB5C00779061 /* QBYLoginRegisterView.m in Sources */,
 				58BCDAD71F12594800F69152 /* QBYTabBar.m in Sources */,
 				58BCDAD91F12594800F69152 /* QBYNewViewController.m in Sources */,
-				14482B2E1F73F71A001E0DEF /* QBYVoiceCell.m in Sources */,
+				14482B2E1F73F71A001E0DEF /* QBYTopicVoiceView.m in Sources */,
 				58BCDADB1F12594800F69152 /* UIBarButtonItem+Create.m in Sources */,
 				58BCDAD61F12594800F69152 /* QBYTabBarController.m in Sources */,
 				58BCDAE91F1262B400F69152 /* QBYADViewController.m in Sources */,
 				58BCDAD31F12594800F69152 /* QBYEssenceViewController.m in Sources */,
 				58A4999A1F1269B400D6031F /* QBYADItem.m in Sources */,
 				5833D9971F14635800779061 /* QBYLoginRegisterViewController.m in Sources */,
-				14482B2B1F73F6D3001E0DEF /* QBYVideoCell.m in Sources */,
+				14482B2B1F73F6D3001E0DEF /* QBYTopicVideoView.m in Sources */,
 				58A499B91F136EDD00D6031F /* QBYSubTagItem.m in Sources */,
 				585887281F1763C700321ADA /* QBYSquareCell.m in Sources */,
 				5870B8B81F69114C00F9FE51 /* NSString+unicode.m in Sources */,
@@ -987,7 +999,7 @@
 				58B585201F186DCB00F28D7A /* QBYFileTool.m in Sources */,
 				58BCDADE1F12594800F69152 /* main.m in Sources */,
 				58A499B21F13660A00D6031F /* QBYSubTagViewController.m in Sources */,
-				14482B311F73F778001E0DEF /* QBYPictureCell.m in Sources */,
+				14482B311F73F778001E0DEF /* QBYTopicPictureView.m in Sources */,
 				58BCDAE61F125A9B00F69152 /* QBYSettingViewController.m in Sources */,
 				58BCDADD1F12594800F69152 /* UIView+Frame.m in Sources */,
 				5833D9B91F14B44800779061 /* QBYFastButton.m in Sources */,

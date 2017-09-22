@@ -20,5 +20,7 @@
 @property CGFloat qby_centerX;
 @property CGFloat qby_centerY;
 
+/**  快速获得一个从xib中加载的一个UIView */
++ (instancetype)qby_viewFromXib;
 
 @end
