@@ -11,8 +11,8 @@
 #import <MJExtension.h>
 #import "QBYTopic.h"
 #import <SVProgressHUD.h>
-
 #import "QBYTopicCell.h"
+#import <SDImageCache.h>
 //#import "QBYVideoCell.h"
 //#import "QBYVoiceCell.h"
 //#import "QBYPictureCell.h"
@@ -180,7 +180,7 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
 #pragma mark - 数据处理
 - (QBYTopicType)type
 {
-    return QBYTopicTypePicture;
+    return QBYTopicTypeVoice;
 }
 
 /*
@@ -357,6 +357,11 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
     return cell;
 }
 
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 200;
+//}
+
 // 所有cell的高度 -> contentSize.height -> 滚动条长度
 // 1000 * 20 -> contentSize.height -> 滚动条长度
 // contentSize.height -> 200 * 20 -> 16800
@@ -501,6 +506,18 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
     
     // 处理footer
     [self dealFooter];
+    
+    // 清除内存缓存
+    [[SDImageCache sharedImageCache] clearMemory];
+    
+    // 设置缓存时长为1个月
+    //    [SDImageCache sharedImageCache].maxCacheAge = 30 * 24 * 60 * 60;
+    
+    // 清除沙盒中所有使用SD缓存的过期图片（缓存时长 > 一个星期）
+    //    [[SDImageCache sharedImageCache] cleanDisk];
+    
+    // 清除沙盒中所有使用SD缓存的图片
+    //    [[SDImageCache sharedImageCache] clearDisk];
     
 //    // 还没有任何内容的时候，不需要判断
 //    if (self.tableView.contentSize.height == 0) return;

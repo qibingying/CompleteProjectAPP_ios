@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QBYSeeBigPictureViewController">
+            <connections>
+                <outlet property="saveButton" destination="LqI-1J-dit" id="Zzz-fA-Khr"/>
+                <outlet property="view" destination="72i-ha-w9o" id="1ec-kf-iuu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="72i-ha-w9o">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PI-5f-h7u" userLabel="返回">
+                    <rect key="frame" x="10" y="40" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="lXt-xp-z2V"/>
+                        <constraint firstAttribute="width" constant="35" id="uF8-cg-jCx"/>
+                    </constraints>
+                    <state key="normal" image="show_image_back_icon"/>
+                    <connections>
+                        <action selector="back" destination="-1" eventType="touchUpInside" id="SeO-1E-TX7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqI-1J-dit" userLabel="保存">
+                    <rect key="frame" x="520" y="530" width="70" height="30"/>
+                    <color key="backgroundColor" red="0.63725842929999998" green="0.55604954770000004" blue="0.4749434622" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="bz8-uB-LGP"/>
+                        <constraint firstAttribute="width" constant="70" id="hgg-PO-MzM"/>
+                    </constraints>
+                    <state key="normal" title="保存">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="0.5" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="save" destination="-1" eventType="touchUpInside" id="tJQ-AT-yF3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8PI-5f-h7u" firstAttribute="leading" secondItem="72i-ha-w9o" secondAttribute="leading" constant="10" id="1Fn-5c-uu9"/>
+                <constraint firstAttribute="trailing" secondItem="LqI-1J-dit" secondAttribute="trailing" constant="10" id="GoA-DB-D6P"/>
+                <constraint firstAttribute="bottom" secondItem="LqI-1J-dit" secondAttribute="bottom" constant="40" id="LGH-Ub-c43"/>
+                <constraint firstItem="8PI-5f-h7u" firstAttribute="top" secondItem="72i-ha-w9o" secondAttribute="top" constant="40" id="MnA-Yj-ymh"/>
+            </constraints>
+            <point key="canvasLocation" x="209" y="408"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="show_image_back_icon" width="35" height="35"/>
+    </resources>
+</document>

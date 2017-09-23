@@ -9,6 +9,7 @@
 #import "QBYTopicPictureView.h"
 #import "QBYTopic.h"
 #import <UIImageView+WebCache.h>
+#import "QBYSeeBigPictureViewController.h"
 
 @interface QBYTopicPictureView()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -31,6 +32,21 @@
     //    btn.contentEdgeInsets = UIEdgeInsetsMake(10, 0, 0, 0);
     //    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     //    btn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigPicture)]];
+}
+
+/**
+ *  查看大图
+ */
+- (void)seeBigPicture
+{
+    QBYSeeBigPictureViewController *vc = [[QBYSeeBigPictureViewController alloc] init];
+    vc.topic = self.topic;
+    [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
+    
+    //    [UIApplication sharedApplication].keyWindow.rootViewController;
 }
 
 - (void)setTopic:(QBYTopic *)topic
@@ -41,10 +57,26 @@
     
     // 设置图片
     self.placeholderView.hidden = NO;
+    __weak __typeof__(self) weakSelf = self;
     [self.imageView qby_setOriginImage:topic.image1 thumbnailImage:topic.image0 placeholder:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        __strong __typeof(self) strongSelf = weakSelf;
         if (!image) return;
         
         self.placeholderView.hidden = YES;
+        
+        // 处理超长图片的大小
+        if (topic.isBigPicture) {
+            CGFloat imageW = topic.middleFrame.size.width;
+            CGFloat imageH = imageW * topic.height / topic.width;
+            
+            // 开启上下文
+            UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
+            // 绘制图片到上下文中
+            [image drawInRect:CGRectMake(0, 0, imageW, imageH)];
+            strongSelf.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+            // 关闭上下文
+            UIGraphicsEndImageContext();
+        }
     }];
     
     // gif
@@ -64,18 +96,18 @@
         self.imageView.clipsToBounds = YES;
         
         // 处理超长图片的大小
-        if (self.imageView.image) {
-            CGFloat imageW = topic.middleFrame.size.width;
-            CGFloat imageH = imageW * topic.height / topic.width;
-            
-            // 开启上下文
-            UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
-            // 绘制图片到上下文中
-            [self.imageView.image drawInRect:CGRectMake(0, 0, imageW, imageH)];
-            self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-            // 关闭上下文
-            UIGraphicsEndImageContext();
-        }
+//        if (self.imageView.image) {
+//            CGFloat imageW = topic.middleFrame.size.width;
+//            CGFloat imageH = imageW * topic.height / topic.width;
+//            
+//            // 开启上下文
+//            UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
+//            // 绘制图片到上下文中
+//            [self.imageView.image drawInRect:CGRectMake(0, 0, imageW, imageH)];
+//            self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+//            // 关闭上下文
+//            UIGraphicsEndImageContext();
+//        }
     } else {
         self.seeBigPictureButton.hidden = YES;
         self.imageView.contentMode = UIViewContentModeScaleToFill;

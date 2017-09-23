@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface QBYAllViewController : UITableViewController
-
+@property (nonatomic, assign) NSString *name;
 @end

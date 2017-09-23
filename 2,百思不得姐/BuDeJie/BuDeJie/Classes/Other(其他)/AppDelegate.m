@@ -71,6 +71,13 @@
     
     // 4.开始监控网络状况
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+    // 5.每次启动程序，都清除过期的图片
+        [[SDImageCache sharedImageCache] cleanDisk];
+//    [[SDImageCache sharedImageCache] clearDisk];
+    
+    // 应用app文件归档所在路径
+    NSString *path = NSHomeDirectory();
     return YES;
 }
 

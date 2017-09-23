@@ -10,6 +10,7 @@
 #import "QBYTopic.h"
 #import <UIImageView+WebCache.h>
 #import <AFNetworking.h>
+#import "QBYSeeBigPictureViewController.h"
 
 @interface QBYTopicVideoView()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -31,6 +32,19 @@
 - (void)awakeFromNib
 {
     self.autoresizingMask = UIViewAutoresizingNone;
+    
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigPicture)]];
+}
+
+/**
+ *  查看大图
+ */
+- (void)seeBigPicture
+{
+    QBYSeeBigPictureViewController *vc = [[QBYSeeBigPictureViewController alloc] init];
+    vc.topic = self.topic;
+    [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)setTopic:(QBYTopic *)topic
