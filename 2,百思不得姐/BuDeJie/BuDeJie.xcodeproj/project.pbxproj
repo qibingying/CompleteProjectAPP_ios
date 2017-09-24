@@ -21,6 +21,12 @@
 		14482B3F1F7510EE001E0DEF /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B3E1F7510EE001E0DEF /* UIImageView+Download.m */; };
 		14482B421F756D1C001E0DEF /* QBYSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B411F756D1C001E0DEF /* QBYSeeBigPictureViewController.m */; };
 		14482B441F756D39001E0DEF /* QBYSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14482B431F756D39001E0DEF /* QBYSeeBigPictureViewController.xib */; };
+		14482B521F762205001E0DEF /* XMGAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B471F762205001E0DEF /* XMGAllViewController.m */; };
+		14482B531F762205001E0DEF /* XMGPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B491F762205001E0DEF /* XMGPictureViewController.m */; };
+		14482B541F762205001E0DEF /* XMGTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B4B1F762205001E0DEF /* XMGTopicViewController.m */; };
+		14482B551F762205001E0DEF /* XMGVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B4D1F762205001E0DEF /* XMGVideoViewController.m */; };
+		14482B561F762205001E0DEF /* XMGVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B4F1F762205001E0DEF /* XMGVoiceViewController.m */; };
+		14482B571F762205001E0DEF /* XMGWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14482B511F762205001E0DEF /* XMGWordViewController.m */; };
 		144F84DB1F35A4E80000A1C4 /* QBYTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F84DA1F35A4E80000A1C4 /* QBYTitleButton.m */; };
 		144F84DE1F35C1810000A1C4 /* QBYAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F84DD1F35C1810000A1C4 /* QBYAllViewController.m */; };
 		144F84E11F35C20F0000A1C4 /* QBYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F84E01F35C20F0000A1C4 /* QBYVideoViewController.m */; };
@@ -124,6 +130,18 @@
 		14482B401F756D1C001E0DEF /* QBYSeeBigPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYSeeBigPictureViewController.h; sourceTree = "<group>"; };
 		14482B411F756D1C001E0DEF /* QBYSeeBigPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYSeeBigPictureViewController.m; sourceTree = "<group>"; };
 		14482B431F756D39001E0DEF /* QBYSeeBigPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QBYSeeBigPictureViewController.xib; sourceTree = "<group>"; };
+		14482B461F762205001E0DEF /* XMGAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGAllViewController.h; sourceTree = "<group>"; };
+		14482B471F762205001E0DEF /* XMGAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGAllViewController.m; sourceTree = "<group>"; };
+		14482B481F762205001E0DEF /* XMGPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGPictureViewController.h; sourceTree = "<group>"; };
+		14482B491F762205001E0DEF /* XMGPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGPictureViewController.m; sourceTree = "<group>"; };
+		14482B4A1F762205001E0DEF /* XMGTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGTopicViewController.h; sourceTree = "<group>"; };
+		14482B4B1F762205001E0DEF /* XMGTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGTopicViewController.m; sourceTree = "<group>"; };
+		14482B4C1F762205001E0DEF /* XMGVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGVideoViewController.h; sourceTree = "<group>"; };
+		14482B4D1F762205001E0DEF /* XMGVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGVideoViewController.m; sourceTree = "<group>"; };
+		14482B4E1F762205001E0DEF /* XMGVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGVoiceViewController.h; sourceTree = "<group>"; };
+		14482B4F1F762205001E0DEF /* XMGVoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGVoiceViewController.m; sourceTree = "<group>"; };
+		14482B501F762205001E0DEF /* XMGWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGWordViewController.h; sourceTree = "<group>"; };
+		14482B511F762205001E0DEF /* XMGWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGWordViewController.m; sourceTree = "<group>"; };
 		144F84D91F35A4E80000A1C4 /* QBYTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYTitleButton.h; sourceTree = "<group>"; };
 		144F84DA1F35A4E80000A1C4 /* QBYTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBYTitleButton.m; sourceTree = "<group>"; };
 		144F84DC1F35C1810000A1C4 /* QBYAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBYAllViewController.h; sourceTree = "<group>"; };
@@ -266,6 +284,25 @@
 				14482B211F739E6E001E0DEF /* QBYTopic.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		14482B451F7620A0001E0DEF /* Topic(第二种方式) */ = {
+			isa = PBXGroup;
+			children = (
+				14482B4A1F762205001E0DEF /* XMGTopicViewController.h */,
+				14482B4B1F762205001E0DEF /* XMGTopicViewController.m */,
+				14482B461F762205001E0DEF /* XMGAllViewController.h */,
+				14482B471F762205001E0DEF /* XMGAllViewController.m */,
+				14482B481F762205001E0DEF /* XMGPictureViewController.h */,
+				14482B491F762205001E0DEF /* XMGPictureViewController.m */,
+				14482B4C1F762205001E0DEF /* XMGVideoViewController.h */,
+				14482B4D1F762205001E0DEF /* XMGVideoViewController.m */,
+				14482B4E1F762205001E0DEF /* XMGVoiceViewController.h */,
+				14482B4F1F762205001E0DEF /* XMGVoiceViewController.m */,
+				14482B501F762205001E0DEF /* XMGWordViewController.h */,
+				14482B511F762205001E0DEF /* XMGWordViewController.m */,
+			);
+			path = "Topic(第二种方式)";
 			sourceTree = "<group>";
 		};
 		5870B8AF1F69114C00F9FE51 /* QBYLog */ = {
@@ -415,6 +452,7 @@
 				58BCDA9E1F12594800F69152 /* QBYEssenceViewController.m */,
 				144F84DC1F35C1810000A1C4 /* QBYAllViewController.h */,
 				144F84DD1F35C1810000A1C4 /* QBYAllViewController.m */,
+				14482B451F7620A0001E0DEF /* Topic(第二种方式) */,
 				144F84DF1F35C20F0000A1C4 /* QBYVideoViewController.h */,
 				144F84E01F35C20F0000A1C4 /* QBYVideoViewController.m */,
 				144F84E21F35C2590000A1C4 /* QBYVoiceViewController.h */,
@@ -973,11 +1011,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14482B561F762205001E0DEF /* XMGVoiceViewController.m in Sources */,
 				585887241F17636100321ADA /* QBYSquareItem.m in Sources */,
 				5833D99D1F14AB5C00779061 /* QBYLoginRegisterView.m in Sources */,
 				58BCDAD71F12594800F69152 /* QBYTabBar.m in Sources */,
 				58BCDAD91F12594800F69152 /* QBYNewViewController.m in Sources */,
 				14482B2E1F73F71A001E0DEF /* QBYTopicVoiceView.m in Sources */,
+				14482B531F762205001E0DEF /* XMGPictureViewController.m in Sources */,
 				58BCDADB1F12594800F69152 /* UIBarButtonItem+Create.m in Sources */,
 				58BCDAD61F12594800F69152 /* QBYTabBarController.m in Sources */,
 				58BCDAE91F1262B400F69152 /* QBYADViewController.m in Sources */,
@@ -994,8 +1034,10 @@
 				5870B8B61F69114C00F9FE51 /* NSArray+Log.m in Sources */,
 				144F84E71F35C2B50000A1C4 /* QBYPictureViewController.m in Sources */,
 				144F84DE1F35C1810000A1C4 /* QBYAllViewController.m in Sources */,
+				14482B521F762205001E0DEF /* XMGAllViewController.m in Sources */,
 				141840D21F37539E003BB74F /* QBYConst.m in Sources */,
 				58BCDADC1F12594800F69152 /* UIImage+Extension.m in Sources */,
+				14482B541F762205001E0DEF /* XMGTopicViewController.m in Sources */,
 				5896147C1F1717BC00725EE3 /* UITextField+Placeholder.m in Sources */,
 				14482B421F756D1C001E0DEF /* QBYSeeBigPictureViewController.m in Sources */,
 				58BCDADA1F12594800F69152 /* AppDelegate.m in Sources */,
@@ -1008,8 +1050,10 @@
 				58BCDAD81F12594800F69152 /* QBYMeViewController.m in Sources */,
 				144F84E11F35C20F0000A1C4 /* QBYVideoViewController.m in Sources */,
 				5870B8B71F69114C00F9FE51 /* NSDictionary+Log.m in Sources */,
+				14482B571F762205001E0DEF /* XMGWordViewController.m in Sources */,
 				58E3DBE31F21EE54006450F5 /* QBYSubTagCell.m in Sources */,
 				58BCDAD41F12594800F69152 /* QBYFriendThreadViewController.m in Sources */,
+				14482B551F762205001E0DEF /* XMGVideoViewController.m in Sources */,
 				58BCDAD51F12594800F69152 /* QBYNavigationController.m in Sources */,
 				14482B221F739E6E001E0DEF /* QBYTopic.m in Sources */,
 				58B585201F186DCB00F28D7A /* QBYFileTool.m in Sources */,

@@ -23,11 +23,11 @@
 
 #import "QBYEssenceViewController.h"
 #import "QBYTitleButton.h"
-#import "QBYAllViewController.h"
-#import "QBYVideoViewController.h"
-#import "QBYVoiceViewController.h"
-#import "QBYPictureViewController.h"
-#import "QBYWordViewController.h"
+#import "XMGAllViewController.h"
+#import "XMGVideoViewController.h"
+#import "XMGVoiceViewController.h"
+#import "XMGPictureViewController.h"
+#import "XMGWordViewController.h"
 
 @interface QBYEssenceViewController()<UIScrollViewDelegate>
 /** 用来存放所有子控制器view的scrollView */
@@ -65,11 +65,37 @@
  */
 - (void)setupAllChildVcs
 {
-    [self addChildViewController:[[QBYAllViewController alloc] init]];
-    [self addChildViewController:[[QBYVideoViewController alloc] init]];
-    [self addChildViewController:[[QBYVoiceViewController alloc] init]];
-    [self addChildViewController:[[QBYPictureViewController alloc] init]];
-    [self addChildViewController:[[QBYWordViewController alloc] init]];
+//    [self addChildViewController:[[QBYAllViewController alloc] init]];
+//    [self addChildViewController:[[QBYVideoViewController alloc] init]];
+//    [self addChildViewController:[[QBYVoiceViewController alloc] init]];
+//    [self addChildViewController:[[QBYPictureViewController alloc] init]];
+//    [self addChildViewController:[[QBYWordViewController alloc] init]];
+    
+//    第二种方式加载
+    [self addChildViewController:[[XMGAllViewController alloc] init]];
+    [self addChildViewController:[[XMGVideoViewController alloc] init]];
+    [self addChildViewController:[[XMGVoiceViewController alloc] init]];
+    [self addChildViewController:[[XMGPictureViewController alloc] init]];
+    [self addChildViewController:[[XMGWordViewController alloc] init]];
+    //    XMGAllViewController *all = [[XMGAllViewController alloc] init];
+    //    all.type = XMGTopicTypeAll;
+    //    [self addChildViewController:all];
+    //
+    //    XMGVideoViewController *video = [[XMGVideoViewController alloc] init];
+    //    video.type = XMGTopicTypeVideo;
+    //    [self addChildViewController:video];
+    //
+    //    XMGVoiceViewController *voice = [[XMGVoiceViewController alloc] init];
+    //    voice.type = XMGTopicTypeVoice;
+    //    [self addChildViewController:voice];
+    //
+    //    XMGPictureViewController *picture = [[XMGPictureViewController alloc] init];
+    //    picture.type = XMGTopicTypePicture;
+    //    [self addChildViewController:picture];
+    //
+    //    XMGWordViewController *word = [[XMGWordViewController alloc] init];
+    //    word.type = XMGTopicTypeWord;
+    //    [self addChildViewController:word];
 }
 
 

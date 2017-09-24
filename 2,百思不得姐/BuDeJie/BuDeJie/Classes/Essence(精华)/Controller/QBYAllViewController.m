@@ -180,7 +180,7 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
 #pragma mark - 数据处理
 - (QBYTopicType)type
 {
-    return QBYTopicTypeVoice;
+    return QBYTopicTypePicture;
 }
 
 /*

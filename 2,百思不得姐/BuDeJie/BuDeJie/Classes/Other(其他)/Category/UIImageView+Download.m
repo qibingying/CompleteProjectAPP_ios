@@ -23,8 +23,10 @@
     // 获得原图（SDWebImage的图片缓存是用图片的url字符串作为key）
     UIImage *originImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:originImageURL];
     if (originImage) { // 原图已经被下载过
-        self.image = originImage;
-        completedBlock(originImage, nil, 0, [NSURL URLWithString:originImageURL]);
+//        self.image = originImage;
+//        completedBlock(originImage, nil, 0, [NSURL URLWithString:originImageURL]);
+//        SDWebImage不能self.image 赋值 因为怕下载后cell重用会错乱，用下面sd_setImageWithURL的方法会在下载之前取消掉当前下载的任务所以比较的好  这个是个坑
+        [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
     } else { // 原图并未下载过
         if (mgr.isReachableViaWiFi) {
             [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
@@ -40,11 +42,13 @@
         } else { // 没有可用网络
             UIImage *thumbnailImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:thumbnailImageURL];
             if (thumbnailImage) { // 缩略图已经被下载过
-                self.image = thumbnailImage;
-                completedBlock(thumbnailImage, nil, 0, [NSURL URLWithString:thumbnailImageURL]);
+//                self.image = thumbnailImage;
+//                completedBlock(thumbnailImage, nil, 0, [NSURL URLWithString:thumbnailImageURL]);
+                [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completedBlock];
             } else { // 没有下载过任何图片
                 // 占位图片;
-                self.image = placeholder;
+//                self.image = placeholder;
+                [self sd_setImageWithURL:nil placeholderImage:placeholder completed:completedBlock];
             }
         }
     }
