@@ -7,12 +7,18 @@
 //
 
 #import "XMGTopicViewController.h"
-#import <AFNetworking.h>
+//#import <AFNetworking.h>
 #import <MJExtension.h>
 #import "QBYTopic.h"
 #import <SVProgressHUD.h>
 #import "QBYTopicCell.h"
 #import <SDImageCache.h>
+//#import <MJRefresh.h>
+#import "QBYRefreshHeader.h"
+#import "QBYTestHeader.h"
+#import "QBYDIYHeader.h"
+#import "QBYDIYFooter.h"
+#import "QBYHTTPSessionManager.h"
 
 //#import "XMGAllViewController.h"
 //#import "XMGVideoViewController.h"
@@ -27,21 +33,23 @@
 @property (nonatomic, strong) NSMutableArray<QBYTopic *> *topics;
 
 /** 请求管理者 */
-@property (nonatomic, strong) AFHTTPSessionManager *manager;
+//@property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) QBYHTTPSessionManager *manager;
 
-/** 下拉刷新控件 */
-@property (nonatomic, weak) UIView *header;
-/** 下拉刷新控件里面的文字 */
-@property (nonatomic, weak) UILabel *headerLabel;
-/** 下拉刷新控件是否正在刷新 */
-@property (nonatomic, assign, getter=isHeaderRefreshing) BOOL headerRefreshing;
 
-/** 上拉刷新控件 */
-@property (nonatomic, weak) UIView *footer;
-/** 上拉刷新控件里面的文字 */
-@property (nonatomic, weak) UILabel *footerLabel;
-/** 上拉刷新控件是否正在刷新 */
-@property (nonatomic, assign, getter=isFooterRefreshing) BOOL footerRefreshing;
+///** 下拉刷新控件 */
+//@property (nonatomic, weak) UIView *header;
+///** 下拉刷新控件里面的文字 */
+//@property (nonatomic, weak) UILabel *headerLabel;
+///** 下拉刷新控件是否正在刷新 */
+//@property (nonatomic, assign, getter=isHeaderRefreshing) BOOL headerRefreshing;
+//
+///** 上拉刷新控件 */
+//@property (nonatomic, weak) UIView *footer;
+///** 上拉刷新控件里面的文字 */
+//@property (nonatomic, weak) UILabel *footerLabel;
+///** 上拉刷新控件是否正在刷新 */
+//@property (nonatomic, assign, getter=isFooterRefreshing) BOOL footerRefreshing;
 
 // 有了方法声明，点语法才会有智能提示
 //g这个拿出去了
@@ -56,10 +64,17 @@
 /* cell的重用标识 */
 static NSString * const QBYTopicCellId = @"QBYTopicCellId";
 
-- (AFHTTPSessionManager *)manager
+//- (AFHTTPSessionManager *)manager
+//{
+//    if (!_manager) {
+//        _manager = [AFHTTPSessionManager manager];
+//    }
+//    return _manager;
+//}
+- (QBYHTTPSessionManager *)manager
 {
     if (!_manager) {
-        _manager = [AFHTTPSessionManager manager];
+        _manager = [QBYHTTPSessionManager manager];
     }
     return _manager;
 }
@@ -100,38 +115,49 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
     self.tableView.tableHeaderView = label;
     
     // header
-    UIView *header = [[UIView alloc] init];
-    header.frame = CGRectMake(0, - 50, self.tableView.qby_width, 50);
-    self.header = header;
-    [self.tableView addSubview:header];
+//    UIView *header = [[UIView alloc] init];
+//    header.frame = CGRectMake(0, - 50, self.tableView.qby_width, 50);
+//    self.header = header;
+//    [self.tableView addSubview:header];
+//    
+//    UILabel *headerLabel = [[UILabel alloc] init];
+//    headerLabel.frame = header.bounds;
+//    headerLabel.backgroundColor = [UIColor redColor];
+//    headerLabel.text = @"下拉可以刷新";
+//    headerLabel.textColor = [UIColor whiteColor];
+//    headerLabel.textAlignment = NSTextAlignmentCenter;
+//    [header addSubview:headerLabel];
+//    self.headerLabel = headerLabel;
+//    
+//    // 让header自动进入刷新
+//    [self headerBeginRefreshing];
+//    
+//    // footer
+//    UIView *footer = [[UIView alloc] init];
+//    footer.frame = CGRectMake(0, 0, self.tableView.qby_width, 35);
+//    self.footer = footer;
+//    
+//    UILabel *footerLabel = [[UILabel alloc] init];
+//    footerLabel.frame = footer.bounds;
+//    footerLabel.backgroundColor = [UIColor redColor];
+//    footerLabel.text = @"上拉可以加载更多";
+//    footerLabel.textColor = [UIColor whiteColor];
+//    footerLabel.textAlignment = NSTextAlignmentCenter;
+//    [footer addSubview:footerLabel];
+//    self.footerLabel = footerLabel;
+//    
+//    self.tableView.tableFooterView = footer;
     
-    UILabel *headerLabel = [[UILabel alloc] init];
-    headerLabel.frame = header.bounds;
-    headerLabel.backgroundColor = [UIColor redColor];
-    headerLabel.text = @"下拉可以刷新";
-    headerLabel.textColor = [UIColor whiteColor];
-    headerLabel.textAlignment = NSTextAlignmentCenter;
-    [header addSubview:headerLabel];
-    self.headerLabel = headerLabel;
-    
-    // 让header自动进入刷新
-    [self headerBeginRefreshing];
+    // header
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
+    // 自动切换透明度
+//    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    self.tableView.mj_header = [QBYDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopics)];
+    [self.tableView.mj_header beginRefreshing];
     
     // footer
-    UIView *footer = [[UIView alloc] init];
-    footer.frame = CGRectMake(0, 0, self.tableView.qby_width, 35);
-    self.footer = footer;
-    
-    UILabel *footerLabel = [[UILabel alloc] init];
-    footerLabel.frame = footer.bounds;
-    footerLabel.backgroundColor = [UIColor redColor];
-    footerLabel.text = @"上拉可以加载更多";
-    footerLabel.textColor = [UIColor whiteColor];
-    footerLabel.textAlignment = NSTextAlignmentCenter;
-    [footer addSubview:footerLabel];
-    self.footerLabel = footerLabel;
-    
-    self.tableView.tableFooterView = footer;
+//    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
+    self.tableView.mj_footer = [QBYDIYFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
 }
 
 #pragma mark - 监听
@@ -147,7 +173,8 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
     if (self.tableView.scrollsToTop == NO) return;
     
     // 进入下拉刷新
-    [self headerBeginRefreshing];
+//    [self headerBeginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 /**
@@ -200,14 +227,16 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
         [self.tableView reloadData];
         
         // 结束刷新
-        [self headerEndRefreshing];
+//        [self headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (error.code != NSURLErrorCancelled) { // 并非是取消任务导致的error，其他网络问题导致的error
             [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
         }
         
         // 结束刷新
-        [self headerEndRefreshing];
+//        [self headerEndRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 
@@ -240,14 +269,21 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
         [self.tableView reloadData];
         
         // 结束刷新
-        [self footerEndRefreshing];
+//        [self footerEndRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        //        if (self.topics.count >= 60) {
+        //            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        //        } else {
+        //            [self.tableView.mj_footer endRefreshing];
+        //        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (error.code != NSURLErrorCancelled) { // 并非是取消任务导致的error，其他网络问题导致的error
             [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
         }
         
         // 结束刷新
-        [self footerEndRefreshing];
+//        [self footerEndRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     }];
 }
 
@@ -255,7 +291,8 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // 根据数据量显示或者隐藏footer
-    self.footer.hidden = (self.topics.count == 0);
+//    self.footer.hidden = (self.topics.count == 0);
+    self.tableView.mj_footer.hidden = (self.topics.count == 0);
     return self.topics.count;
 }
 
@@ -277,21 +314,21 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
 /**
  *  用户松开scrollView时调用
  */
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    CGFloat offsetY = - (self.tableView.contentInset.top + self.header.qby_height);
-    if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
-        [self headerBeginRefreshing];
-    }
-}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+//{
+//    CGFloat offsetY = - (self.tableView.contentInset.top + self.header.qby_height);
+//    if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
+//        [self headerBeginRefreshing];
+//    }
+//}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     // 处理header
-    [self dealHeader];
+//    [self dealHeader];
     
     // 处理footer
-    [self dealFooter];
+//    [self dealFooter];
     
     // 清除内存缓存
     [[SDImageCache sharedImageCache] clearMemory];
@@ -300,93 +337,93 @@ static NSString * const QBYTopicCellId = @"QBYTopicCellId";
 /**
  *  处理header
  */
-- (void)dealHeader
-{
-    // 如果正在下拉刷新，直接返回
-    if (self.isHeaderRefreshing) return;
-    
-    // 当scrollView的偏移量y值 <= offsetY时，代表header已经完全出现
-    CGFloat offsetY = - (self.tableView.contentInset.top + self.header.qby_height);
-    if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
-        self.headerLabel.text = @"松开立即刷新";
-        self.headerLabel.backgroundColor = [UIColor grayColor];
-    } else {
-        self.headerLabel.text = @"下拉可以刷新";
-        self.headerLabel.backgroundColor = [UIColor redColor];
-    }
-}
+//- (void)dealHeader
+//{
+//    // 如果正在下拉刷新，直接返回
+//    if (self.isHeaderRefreshing) return;
+//    
+//    // 当scrollView的偏移量y值 <= offsetY时，代表header已经完全出现
+//    CGFloat offsetY = - (self.tableView.contentInset.top + self.header.qby_height);
+//    if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
+//        self.headerLabel.text = @"松开立即刷新";
+//        self.headerLabel.backgroundColor = [UIColor grayColor];
+//    } else {
+//        self.headerLabel.text = @"下拉可以刷新";
+//        self.headerLabel.backgroundColor = [UIColor redColor];
+//    }
+//}
 
 /**
  *  处理footer
  */
-- (void)dealFooter
-{
-    // 还没有任何内容的时候，不需要判断
-    if (self.tableView.contentSize.height == 0) return;
-    
-    // 当scrollView的偏移量y值 >= offsetY时，代表footer已经完全出现
-    CGFloat ofsetY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.qby_height;
-    if (self.tableView.contentOffset.y >= ofsetY
-        && self.tableView.contentOffset.y > - (self.tableView.contentInset.top)) { // footer完全出现，并且是往上拖拽
-        [self footerBeginRefreshing];
-    }
-}
+//- (void)dealFooter
+//{
+//    // 还没有任何内容的时候，不需要判断
+//    if (self.tableView.contentSize.height == 0) return;
+//    
+//    // 当scrollView的偏移量y值 >= offsetY时，代表footer已经完全出现
+//    CGFloat ofsetY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.qby_height;
+//    if (self.tableView.contentOffset.y >= ofsetY
+//        && self.tableView.contentOffset.y > - (self.tableView.contentInset.top)) { // footer完全出现，并且是往上拖拽
+//        [self footerBeginRefreshing];
+//    }
+//}
 
 #pragma mark - header
-- (void)headerBeginRefreshing
-{
-    // 如果正在下拉刷新，直接返回
-    if (self.isHeaderRefreshing) return;
-    
-    // 进入下拉刷新状态
-    self.headerLabel.text = @"正在刷新数据...";
-    self.headerLabel.backgroundColor = [UIColor blueColor];
-    self.headerRefreshing = YES;
-    // 增加内边距
-    [UIView animateWithDuration:0.25 animations:^{
-        UIEdgeInsets inset = self.tableView.contentInset;
-        inset.top += self.header.qby_height;
-        self.tableView.contentInset = inset;
-        
-        // 修改偏移量
-        self.tableView.contentOffset = CGPointMake(self.tableView.contentOffset.x,  - inset.top);
-    }];
-    
-    // 发送请求给服务器，下拉刷新数据
-    [self loadNewTopics];
-}
+//- (void)headerBeginRefreshing
+//{
+//    // 如果正在下拉刷新，直接返回
+//    if (self.isHeaderRefreshing) return;
+//    
+//    // 进入下拉刷新状态
+//    self.headerLabel.text = @"正在刷新数据...";
+//    self.headerLabel.backgroundColor = [UIColor blueColor];
+//    self.headerRefreshing = YES;
+//    // 增加内边距
+//    [UIView animateWithDuration:0.25 animations:^{
+//        UIEdgeInsets inset = self.tableView.contentInset;
+//        inset.top += self.header.qby_height;
+//        self.tableView.contentInset = inset;
+//        
+//        // 修改偏移量
+//        self.tableView.contentOffset = CGPointMake(self.tableView.contentOffset.x,  - inset.top);
+//    }];
+//    
+//    // 发送请求给服务器，下拉刷新数据
+//    [self loadNewTopics];
+//}
 
-- (void)headerEndRefreshing
-{
-    self.headerRefreshing = NO;
-    // 减小内边距
-    [UIView animateWithDuration:0.25 animations:^{
-        UIEdgeInsets inset = self.tableView.contentInset;
-        inset.top -= self.header.qby_height;
-        self.tableView.contentInset = inset;
-    }];
-}
+//- (void)headerEndRefreshing
+//{
+//    self.headerRefreshing = NO;
+//    // 减小内边距
+//    [UIView animateWithDuration:0.25 animations:^{
+//        UIEdgeInsets inset = self.tableView.contentInset;
+//        inset.top -= self.header.qby_height;
+//        self.tableView.contentInset = inset;
+//    }];
+//}
 
 #pragma mark - footer
-- (void)footerBeginRefreshing
-{
-    // 如果正在上拉刷新，直接返回
-    if (self.isFooterRefreshing) return;
-    
-    // 进入刷新状态
-    self.footerRefreshing = YES;
-    self.footerLabel.text = @"正在加载更多数据...";
-    self.footerLabel.backgroundColor = [UIColor blueColor];
-    
-    // 发送请求给服务器，上拉加载更多数据
-    [self loadMoreTopics];
-}
-
-- (void)footerEndRefreshing
-{
-    self.footerRefreshing = NO;
-    self.footerLabel.text = @"上拉可以加载更多";
-    self.footerLabel.backgroundColor = [UIColor redColor];
-}
+//- (void)footerBeginRefreshing
+//{
+//    // 如果正在上拉刷新，直接返回
+//    if (self.isFooterRefreshing) return;
+//    
+//    // 进入刷新状态
+//    self.footerRefreshing = YES;
+//    self.footerLabel.text = @"正在加载更多数据...";
+//    self.footerLabel.backgroundColor = [UIColor blueColor];
+//    
+//    // 发送请求给服务器，上拉加载更多数据
+//    [self loadMoreTopics];
+//}
+//
+//- (void)footerEndRefreshing
+//{
+//    self.footerRefreshing = NO;
+//    self.footerLabel.text = @"上拉可以加载更多";
+//    self.footerLabel.backgroundColor = [UIColor redColor];
+//}
 
 @end

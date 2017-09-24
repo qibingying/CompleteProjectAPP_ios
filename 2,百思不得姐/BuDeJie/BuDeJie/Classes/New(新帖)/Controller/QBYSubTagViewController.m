@@ -5,6 +5,31 @@
 //  Created by 古俊奇 on 2017/7/10.
 //  Copyright © 2017年 骑兵营. All rights reserved.
 //
+/*
+ D : NSObject
+ - (void)run;
+ - (void)test;
+ 
+ F : NSObject
+ - (void)study;
+ 
+ A : UITableViewController
+ [D run]
+ [D test]
+ [F study]
+ - (void)a;
+ 
+ C : UICollectionViewController
+ [D run]
+ [D test]
+ [F study]
+ - (void)c;
+ 
+ E : UIViewController
+ [D run]
+ [D test]
+ [F study]
+ */
 
 #import "QBYSubTagViewController.h"
 #import "AFNetWorking/AFNetWorking.h"
@@ -12,8 +37,9 @@
 #import <MJExtension/MJExtension.h>
 #import "QBYSubTagCell.h"
 #import <SVProgressHUD/SVProgressHUD.h>
-
-
+//#import <MJRefresh.h>
+#import "QBYRefreshHeader.h"
+#import "QBYDIYHeader.h"
 
 static NSString * const ID = @"cell";
 
@@ -42,6 +68,21 @@ static NSString * const ID = @"cell";
     
     // 提示用户当前正在加载数据 SVPro
     [SVProgressHUD showWithStatus:@"正在加载ing....."];
+    
+    [self setupRefresh];
+}
+
+- (void)setupRefresh
+{
+    // header
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        QBYFunc
+//    }];
+    self.tableView.mj_header = [QBYDIYHeader headerWithRefreshingBlock:^{
+//        XMGFunc
+    }];
+    
+    // footer
     
 }
 

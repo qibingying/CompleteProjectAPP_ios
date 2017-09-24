@@ -24,7 +24,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
   - MJExtension (~> 3.0.10)
-  - MJRefresh
+  - MJRefresh (~> 3.1.11)
   - SDWebImage (~> 3.7.5)
   - SVProgressHUD (~> 2.0.3)
 
@@ -35,6 +35,6 @@ SPEC CHECKSUMS:
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
 
-PODFILE CHECKSUM: 28f415d0bb931f2f5a8dd1403d363b55d8da1a6a
+PODFILE CHECKSUM: fd5e5665248451fa5467f63713bd4e6960e84229
 
 COCOAPODS: 1.2.1
